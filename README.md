@@ -8,9 +8,10 @@ Stroke Predictions Data Analysis is a comprehensive data analysis tool designed 
 
 ## Dataset Content
 
-This dataset contains medical insurance charges for individual policyholders, along with key demographic and lifestyle attributes such as age, BMI, sex, children, age and smoking status. The original dataset consists of 1,338 rows and 7 columns and was sourced from Kaggle link [here](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+This dataset contains stroke predictors for individuals, along with key demographic and lifestyle attributes such as age, BMI, sex, children, age and smoking status. The original dataset consists of 5,110 rows and 12 columns and was sourced from Kaggle link [here](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
 
 During the ETL phase of the data analysis process, additional features were created and added to the dataset. As a result, the final dataset includes the following columns:
+
 Age
 Hypertension
 Heart Disease
@@ -59,7 +60,7 @@ Higher BMI is associated with increased cardiovascular strain and metabolic risk
 
 
 
-## Challenges and Future Work
+## Challenges
 **Visualising categorical relationships with a large dataset**
 
 Initial scatterplots were ineffective because the dataset contained thousands of points, causing severe overplotting.
