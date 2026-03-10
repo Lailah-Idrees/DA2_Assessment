@@ -99,3 +99,6 @@ Compare model performance using cross‑validated results to ensure reliability.
 Restore or reconstruct the smoking_status feature, as smoking is a known cardiovascular risk factor.
 
 Investigate its relationship with stroke, heart disease, and hypertension to determine whether it improves model performance or interpretability.
+
+**Add More Functions**
+A lot of similar plots were constructed using custom fucntions can reduce the amount of code visible on the screen making it feel less cluttered. I would therefor incorperate more function in my future work
