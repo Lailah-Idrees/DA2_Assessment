@@ -1,72 +1,98 @@
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
+## Stroke Predicitions Data Analysis 
 
-Welcome,
+Stroke Predictions Data Analysis is a comprehensive data analysis tool designed to streamline data exploration, analysis, visualisation and machine learning. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
 
-## How to use this repo
+## Dataset Content
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+This dataset contains medical insurance charges for individual policyholders, along with key demographic and lifestyle attributes such as age, BMI, sex, children, age and smoking status. The original dataset consists of 1,338 rows and 7 columns and was sourced from Kaggle link [here](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
 
-1. Copy the URL of your repository to your clipboard.
+During the ETL phase of the data analysis process, additional features were created and added to the dataset. As a result, the final dataset includes the following columns:
+Age
+Hypertension
+Heart Disease
+Avergae Glucose Level
+BMI
+Weight Category
+Ever Married
+Ever Married Yes
+Work Type
+Work Type Encoded
+Residence Type
+Residence Type Urban
+Smoking Status
 
-1. In VS Code, select **File** -> **Open Folder**.
+## Aim of Analysis
+The aim of this project is to investigate how demographic, lifestyle, and health‑related variables influence stroke outcomes, and to develop a machine‑learning model capable of predicting whether an individual is likely to experience a stroke.
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
+## Hypothesis
+**H1: Age and Health Conditions**
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+There will be a positive correlation between age and the likelihood of experiencing stroke, heart disease, or hypertension.
+Older individuals are generally more susceptible to severe health conditions due to physiological decline.
 
-1. In VS Code, select **File** > **Open Folder** again.
+* This hypothesis was supported by the exploratory analysis: scatterplots and stripplots showed that stroke, heart disease, and hypertension cases were concentrated in older age groups, and the correlation heatmap confirmed moderately positive correlations between age and stroke (0.25), age and heart disease (0.26), and age and hypertension (0.28).
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+**H2: Age and BMI**
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+There will be a weak negative correlation between age and BMI.
+As people age, metabolic rate tends to slow and appetite may decrease, which can lead to slightly lower BMI values in older adults.
 
-1. Choose **Venv** from the dropdown list.
+* This hypothesis was based on the assumption that metabolic rate slows with age and appetite may decrease, potentially leading to slightly lower BMI values in older adults. However, the data did not support this expectation. Instead, the analysis revealed a weak positive correlation between age and BMI.
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+**H3: Cardiovascular Conditions and Stroke**
 
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
+Individuals with heart disease or hypertension will be more likely to have experienced a stroke.
+Both conditions are caused by similar cardiovascular risk factors, and elevated blood pressure or impaired heart function can increase the likelihood of stroke.
+* The data did not support this expectation. Instead, the analysis revealed a weak positive correlation between age and BMI. Scatterplots and stripplots showed that BMI tends to increase slightly with age, and the correlation heatmap confirmed this with a small positive correlation coefficient (approximately 0.35).
 
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
+**H4: BMI and Stroke**
 
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
+There will be a positive relationship between BMI and stroke incidence.
+Higher BMI is associated with increased cardiovascular strain and metabolic risk, which may contribute to a greater likelihood of experiencing a stroke.
+* Across every stage of your analysis, BMI showed little to no meaningful relationship with stroke.
 
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
 
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
 
- ```console
- pip3 install -r requirements.txt
- ```
+## Challenges and Future Work
+**Visualising categorical relationships with a large dataset**
 
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
+Initial scatterplots were ineffective because the dataset contained thousands of points, causing severe overplotting.
 
-1. Click the **kernel** button and choose **Python Environments**.
+With guidance, striplots were used instead, allowing the categorical relationships to be visualised clearly without losing interpretability.
 
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
+**Severe class imbalance in the stroke variable**
 
-```console
-! python --version
-```
+The dataset contained 4861 non‑stroke cases vs only 249 stroke cases, creating a highly imbalanced target.
 
-## Deployment Reminders
+This imbalance caused the logistic regression model to favour the majority class, resulting in very low precision and recall for stroke predictions.
 
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
+The model struggled to correctly identify stroke cases, even when accuracy appeared high.
 
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+**Loss of the ‘smoking_status’ variable during data cleaning**
+
+During preprocessing, the smoking_status column was unintentionally removed from the dataset.
+
+Although this did not affect the core analysis, it meant that one potentially important health‑related feature was not included in the modelling stage.
+
+## Future Work
+**Address the severe class imbalance in the stroke variable**
+
+collect more data on stroke individuals this will add more data to the dataset and make predicitions more precise.
+
+**Explore more advanced machine‑learning models**
+
+Test algorithms such as Random Forest and Decision trees
+
+Compare model performance using cross‑validated results to ensure reliability.
+
+**Reintroduce and analyse the missing ‘smoking_status’ variable**
+
+Restore or reconstruct the smoking_status feature, as smoking is a known cardiovascular risk factor.
+
+Investigate its relationship with stroke, heart disease, and hypertension to determine whether it improves model performance or interpretability.
