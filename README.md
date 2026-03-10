@@ -8,23 +8,23 @@ Stroke Predictions Data Analysis is a comprehensive data analysis tool designed 
 
 ## Dataset Content
 
-This dataset contains stroke predictors for individuals, along with key demographic and lifestyle attributes such as age, BMI, sex, children, age and smoking status. The original dataset consists of 5,110 rows and 12 columns and was sourced from Kaggle link [here](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+This dataset contains stroke predictors for individuals, along with key demographic and lifestyle attributes such as age, BMI, sex, children, age and smoking status. The original dataset consists of 5,110 rows and 12 columns and was sourced from Kaggle link [here](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset).
 
 During the ETL phase of the data analysis process, additional features were created and added to the dataset. As a result, the final dataset includes the following columns:
 
-Age
-Hypertension
-Heart Disease
-Avergae Glucose Level
-BMI
-Weight Category
-Ever Married
-Ever Married Yes
-Work Type
-Work Type Encoded
-Residence Type
-Residence Type Urban
-Smoking Status
+* Age
+* Hypertension
+* Heart Disease
+* Avergae Glucose Level
+* BMI
+* Weight Category
+* Ever Married
+* Ever Married Yes
+* Work Type
+* Work Type Encoded
+* Residence Type
+* Residence Type Urban
+* Smoking Status
 
 ## Aim of Analysis
 The aim of this project is to investigate how demographic, lifestyle, and health‑related variables influence stroke outcomes, and to develop a machine‑learning model capable of predicting whether an individual is likely to experience a stroke.
