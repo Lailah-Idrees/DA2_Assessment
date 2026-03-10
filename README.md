@@ -29,6 +29,8 @@ During the ETL phase of the data analysis process, additional features were crea
 ## Aim of Analysis
 The aim of this project is to investigate how demographic, lifestyle, and health‑related variables influence stroke outcomes, and to develop a machine‑learning model capable of predicting whether an individual is likely to experience a stroke.
 
+## PowerBI Dashboard 
+The link to the Stroke Predictions Dashboard can be found [here](https://app.powerbi.com/groups/me/reports/9b285b2a-8ee0-4029-a00a-9fe32e0bc3e2/c1541ac4e3238de7c32e?experience=power-bi)
 
 ## Hypothesis
 **H1: Age and Health Conditions**
